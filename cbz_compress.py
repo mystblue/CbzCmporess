@@ -4,7 +4,7 @@
 同階層にあるフォルダを zip 圧縮するスクリプト。
 ただし、拡張子は、cbz とする。
 フォルダ内のファイル名は 4 桁の連番となる。
-フォルダ名が ( や [ で始まる場合はスキップされる
+フォルダ名が ( や - で始まる場合はスキップされる
 """
 
 __author__  = 'mystblue'
@@ -134,8 +134,8 @@ def search_folder(rootDir):
         # ファイルは処理しない
         if not os.path.isdir(path):
             continue
-        # ( や [ で始まるフォルダも処理しない
-        if file_name.startswith('(') or file_name.startswith('['):
+        # ( や - で始まるフォルダも処理しない
+        if file_name.startswith('(') or file_name.startswith('-'):
             continue
         #print file_name
         zip_compress(path)
