@@ -147,6 +147,5 @@ def search_folder(rootDir):
     return count
 
 if __name__ == "__main__":
-    #num = search_folder(".")
-    #show_message(num)
-    print compare("img11", "img100")
+    num = search_folder(".")
+    show_message(num)
