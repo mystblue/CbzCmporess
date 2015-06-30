@@ -42,7 +42,7 @@ def compare(str1, str2):
     for i in range(min):
         s1 = str1[i]
         s2 = str2[i]
-        if s1 == s2:
+        if s1 == s2 and not s1.isdigit() and not s2.isdigit():
             continue
         else:
             if s1.isdigit() and s2.isdigit():
@@ -62,8 +62,12 @@ def compare(str1, str2):
                     i2 += 1
                 # 001 と 01 の場合は、01 の方が大きい
                 if long(s1) == long(s2):
+                    #print s1
+                    #print s2
                     return cmp(str1, str2)
                 else:
+                    #print "s1 = " + s1
+                    #print "s2 = " + s2
                     return -1 if long(s1) < long(s2) else 1
             if isSymbol(s1) and not isSymbol(s2):
                 return -1
@@ -143,5 +147,6 @@ def search_folder(rootDir):
     return count
 
 if __name__ == "__main__":
-    num = search_folder(".")
-    show_message(num)
+    #num = search_folder(".")
+    #show_message(num)
+    print compare("img11", "img100")
